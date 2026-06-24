@@ -6,13 +6,21 @@ use CodeIgniter\Model;
 
 class TransactionModel extends Model
 {
-    protected $table            = 'transactions';
+    protected $table            = 'transaction';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = [
+
+    'username', 
+    'total_harga', 
+    'alamat', // Sudah aman menggunakan huruf kecil
+    'ongkir', 
+    'status'
+
+    ];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
